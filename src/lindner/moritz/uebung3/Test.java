@@ -1,7 +1,4 @@
-package lindner.moritz.uebung3.test;
-
-import lindner.moritz.uebung3.Dreieck;
-import lindner.moritz.uebung3.Rechteck;
+package lindner.moritz.uebung3;
 
 public class Test {
 	int testVar;

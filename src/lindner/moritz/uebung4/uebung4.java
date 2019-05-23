@@ -6,7 +6,7 @@ import java.util.Random;
 
 import lindner.moritz.uebung3.Punkt;
 
-public class TestEnviorment {
+public class uebung4 {
 
 	public static void main(String[] args) {
 		// GraphischesObject gO = new GraphischesObject();
