@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -129,34 +130,50 @@ public class Uebung5 {
 	}
 
 	private void aufgabe5() {
+		final int AMOUNT_TO_GENERATE = 10000000;
+		
 		ArrayList<Double> liste = new ArrayList<Double>();
 		Vector<Double> vector = new Vector<Double>();
 		LinkedList<Double> linkedList = new LinkedList<Double>();
 
 		Duration listDuration, vectorDuration, linkedListDuration;
-
+		
+		List<Double> randList = new ArrayList<Double>(10000000);
+		for (int i = 2; i <= 10000000; i++) {
+			randList.add( random() * 100);
+		}
+		
 		Instant beg = Instant.now();
-		for (int i = 0; i < 1000000; i++) {
+		/*for (int i = 0; i < AMOUNT_TO_GENERATE; i++) {
 			double valueToAdd = random() * 100;
 			liste.add(valueToAdd);
-		}
-		listDuration = Duration.between(beg, Instant.now());
-
-		beg = Instant.now();
-		for (int i = 0; i < 1000000; i++) {
-			double valueToAdd = random() * 100;
-			vector.add(valueToAdd);
+		}*/
+		for (double d : randList) {
+			vector.add(d);
 		}
 		vectorDuration = Duration.between(beg, Instant.now());
 
 		beg = Instant.now();
-		for (int i = 0; i < 1000000; i++) {
+		/*for (int i = 0; i < AMOUNT_TO_GENERATE; i++) {
+			double valueToAdd = random() * 100;
+			vector.add(valueToAdd);
+		}*/
+		for (double d : randList) {
+			liste.add(d);
+		}
+		listDuration = Duration.between(beg, Instant.now());
+
+		beg = Instant.now();
+		/*for (int i = 0; i < AMOUNT_TO_GENERATE; i++) {
 			double valueToAdd = random() * 100;
 			linkedList.add(valueToAdd);
+		}*/
+		for (double d : randList) {
+			linkedList.add(d);
 		}
 		linkedListDuration = Duration.between(beg, Instant.now());
 
-		System.out.println("Laufzeiten für das Eintragen von 1000000 Werten:");
+		System.out.println("Laufzeiten für das Eintragen von " + AMOUNT_TO_GENERATE + " Werten:");
 
 		System.out.println("List: " + listDuration.toMillis() + "ms");
 		System.out.println("Vector: " + vectorDuration.toMillis() + "ms");
