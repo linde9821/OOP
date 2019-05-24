@@ -45,6 +45,7 @@ public class Uebung5 {
 		uebung5.aufgabe6_2();
 		System.out.println();
 		uebung5.aufgabe7();
+		
 	}
 
 	private void aufgabe1() {
