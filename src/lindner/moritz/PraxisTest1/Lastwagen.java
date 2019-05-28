@@ -25,6 +25,7 @@ public final class Lastwagen {
 	
 	public double getLadungsGewicht() {
 		double gesamtgewicht = 0.0;
+		
 		for (Gegenstand g : ladungsliste ) {
 			gesamtgewicht += g.getGewicht();
 		}
